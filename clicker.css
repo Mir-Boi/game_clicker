@@ -116,7 +116,10 @@ main {
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
 #finish::before{
     content: '';
     display: block;
