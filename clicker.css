@@ -100,8 +100,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 200px;
     height: 65px;
+    font-size: .75rem;
     color: var(--tg-theme-button-text-color);
 
     border-radius: 7px;
@@ -136,6 +137,8 @@ main {
     -o-transform: skewX(-20deg);
     transform: skewX(-20deg);
 }
+
+
 @keyframes sh02 {
     from {
       opacity: 0;
@@ -150,4 +153,4 @@ main {
       opacity: 0;
       left: 100%;
     }
-  }
+}

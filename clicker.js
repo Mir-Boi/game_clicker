@@ -22,9 +22,13 @@ function start() {
 
     const timeFinish = setTimeout((() => {
         button.onclick = null;
-        display.innerHTML = 'Конец';
         button.classList.add("deactivate");
+        display.innerHTML = 'Конец';
         display.id = "finish";
+        Telegram.WebApp.HapticFeedback.notificationOccurred('error');  // вибрация
+        display.addEventListener("click", () => {
+            Telegram.WebApp.sendData(clicks);
+        })
 
         clearInterval(interval);
         clearTimeout(timeFinish);
