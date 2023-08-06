@@ -1,19 +1,36 @@
-let clicks = 1;
+function nameToRgba(name) {
+    var canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    context.fillStyle = name;
+    context.fillRect(0,0,1,1);
+    return context.getImageData(0,0,1,1).data;
+}
 
-const TIMEOUT = 5000;
+alert("Гей: " + Telegram.WebApp.button_color);
+alert("Гей2" + nameToRgba(Telegram.WebApp.button_color));
+
+var clicks = 0;
+
+const TIMEOUT = 10000;
 
 const display = document.querySelector("#display");
 const button = document.querySelector("#button");
 const counter = document.querySelector("#counter");
+var sound_click = new Audio("click.mp3");
 
 button.onclick = start;
 
 function start() {
     const startTime = Date.now();
+    counter.innerHTML = clicks;
     display.innerHTML = formatTime(TIMEOUT);
-    counter.innerHTML = clicks++;
+    document.querySelector("#button").innerHTML = "Клик";
 
-    button.onclick = () => counter.innerHTML = clicks++;
+    button.onclick = () => {
+        counter.innerHTML = clicks++;
+        sound_click.currentTime = 0;
+        sound_click.play()
+    };
 
     const interval = setInterval(() => {
         const delta = Date.now() - startTime;
