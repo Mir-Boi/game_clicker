@@ -25,13 +25,16 @@ function start() {
         button.classList.add("deactivate");
         display.innerHTML = 'Конец';
         display.id = "finish";
-        Telegram.WebApp.HapticFeedback.notificationOccurred('error');  // вибрация
+        var data = {
+            clicks: clicks,
+        };
         display.addEventListener("click", () => {
-            Telegram.WebApp.sendData(clicks);
-        })
+            Telegram.WebApp.sendData(JSON.stringify(data));
+        });
 
         clearInterval(interval);
         clearTimeout(timeFinish);
+        Telegram.WebApp.HapticFeedback.notificationOccurred('error');  // вибрация
     }), TIMEOUT) 
 }
 
