@@ -26,6 +26,7 @@ main {
     --border-color: firebrick;
     --shadow-color: rgb(112, 20, 20);
 
+    -webkit-tap-highlight-color: transparent;
     position: relative;
     font-size: .75rem;
     width: 200px;
@@ -116,7 +117,6 @@ main {
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-    -webkit-tap-highlight-color: transparent;
 }
 
 
