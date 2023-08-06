@@ -41,3 +41,6 @@ function start() {
 function formatTime(ms) {
     return Number.parseFloat(ms / 1000).toFixed(2);
 }
+
+Telegram.WebApp.expand();
+Telegram.WebApp.enableClosingConfirmation();  // вышел - не зассчитывается попытка
